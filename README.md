@@ -4,11 +4,10 @@ Custom ComfyUI nodes to run [fal-ai/AuraSR](https://huggingface.co/fal-ai/AuraSR
 
 ## Getting Started
 
-Go to the ComfyUI folder `.\ComfyUI\custom_nodes` and clone this repository: `git clone https://github.com/alexisrolland/ComfyUI-AuraSR.git`
-
-Install the Python dependencies:
+Go to the ComfyUI folder `.\ComfyUI\custom_nodes`, clone this repository and install Python dependencies:
 
 ```sh
+git clone https://github.com/alexisrolland/ComfyUI-AuraSR.git
 ..\..\python_embeded\python.exe -s -m pip install -r .\ComfyUI-AuraSR\requirements.txt
 ```
 
