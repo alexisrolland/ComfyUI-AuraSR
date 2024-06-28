@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-aurasr"
+description = "Custom nodes to run fal-ai/AuraSR model."
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["aura-sr>=0.0.2"]
+
+[project.urls]
+Repository = "https://github.com/alexisrolland/ComfyUI-AuraSR"
+
+[tool.comfy]
+PublisherId = "alexisrolland"
+DisplayName = "ComfyUI-AuraSR"
+Icon = ""

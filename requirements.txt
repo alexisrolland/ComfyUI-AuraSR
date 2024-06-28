@@ -1,1 +1,1 @@
-aura-sr
+aura-sr>=0.0.2
