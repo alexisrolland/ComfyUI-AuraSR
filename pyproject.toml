@@ -11,4 +11,4 @@ Repository = "https://github.com/alexisrolland/ComfyUI-AuraSR"
 [tool.comfy]
 PublisherId = "alexisrolland"
 DisplayName = "ComfyUI-AuraSR"
-Icon = "https://github.com/alexisrolland/ComfyUI-AuraSR/blob/main/iguana.png"
+Icon = ""
