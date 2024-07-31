@@ -2,7 +2,7 @@
 name = "comfyui-aurasr"
 description = "Custom nodes to run fal-ai/AuraSR model."
 version = "1.0.3"
-license = "Apache-2.0"
+license = { text = "Apache License 2.0" }
 dependencies = ["aura-sr>=0.0.2"]
 
 [project.urls]
