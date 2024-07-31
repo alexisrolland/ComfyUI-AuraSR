@@ -21,7 +21,7 @@ class downloadAuraSR:
         return {
             "required": {
                 "model": (
-                    ['fal-ai/AuraSR',],
+                    ['fal-ai/AuraSR', 'fal/AuraSR-v2'],
                     { "default": 'fal-ai/AuraSR'}
                 ),
             }
@@ -49,6 +49,7 @@ class RunAuraSR:
             "required": {
                 "AURASR_MODEL": ("AURASR_MODEL",),
                 "IMAGE": ("IMAGE",),
+                "avoid_seams": ("BOOLEAN", {"default": True}),
             }
         }
 
@@ -66,14 +67,18 @@ class RunAuraSR:
             return torch.cat([self.pil2tensor(img) for img in image], dim=0)
         return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
 
-    def execute(self, AURASR_MODEL, IMAGE,):
+    def execute(self, AURASR_MODEL, IMAGE, avoid_seams):
         # Convert tensor to PIL image
         images = self.tensor2pil(IMAGE)
 
-        # Upscale images
+        # Check version of AuraSR model and upscale images
         upscaled_images = list()
-        for image in images:
-            upscaled_images.append(AURASR_MODEL.upscale_4x(image))
+        if avoid_seams:
+            for image in images:
+                upscaled_images.append(AURASR_MODEL.upscale_4x_overlapped(image))
+        else:
+            for image in images:
+                upscaled_images.append(AURASR_MODEL.upscale_4x(image))
 
         # Convert PIL images to tensor
         upscaled_images = self.pil2tensor(upscaled_images)
