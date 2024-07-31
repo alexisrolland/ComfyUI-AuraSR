@@ -1,6 +1,9 @@
 # ComfyUI AuraSR
 
-Custom ComfyUI nodes to run [fal-ai/AuraSR](https://huggingface.co/fal-ai/AuraSR) model.
+Custom ComfyUI nodes to run AuraSR models. Supported versions:
+
+- [fal/AuraSR](https://huggingface.co/fal/AuraSR)
+- [fal/AuraSR-v2](https://huggingface.co/fal/AuraSR-v2)
 
 ## Getting Started
 
@@ -15,7 +18,5 @@ git clone https://github.com/alexisrolland/ComfyUI-AuraSR.git
 ```
 
 ## Example
-
-Download this image and import it in ComfyUI to load the workflow.
 
 ![Example](workflow.png)

@@ -21,8 +21,8 @@ class downloadAuraSR:
         return {
             "required": {
                 "model": (
-                    ['fal-ai/AuraSR', 'fal/AuraSR-v2'],
-                    { "default": 'fal-ai/AuraSR'}
+                    ['fal/AuraSR', 'fal/AuraSR-v2'],
+                    { "default": 'fal/AuraSR'}
                 ),
             }
         }
