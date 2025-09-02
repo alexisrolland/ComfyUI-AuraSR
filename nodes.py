@@ -1,8 +1,9 @@
 import numpy as np
 import torch
-from aura_sr import AuraSR
 from PIL import Image
 
+import folder_paths
+from .aura_sr import AuraSR
 
 class LoadAuraSR:
     """Node to download and load AuraSR model."""
@@ -21,14 +22,15 @@ class LoadAuraSR:
         return {
             "required": {
                 "model": (
-                    ['fal/AuraSR', 'fal/AuraSR-v2'],
-                    { "default": 'fal/AuraSR'}
+                    [x for x in folder_paths.get_filename_list("upscale_models") if x.endswith(".safetensors")],
+                    { "default": "aurasr.safetensors"}
                 ),
             }
         }
 
     def execute(self, model):
-        MODEL = AuraSR.from_pretrained(model_id=model)
+        model_path = folder_paths.get_full_path("upscale_models", model)
+        MODEL = AuraSR.from_pretrained(model_path=model_path, use_safetensors=True)
         return (MODEL,)
 
 
