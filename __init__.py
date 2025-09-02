@@ -9,6 +9,6 @@ NODE_CLASS_MAPPINGS = {
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoadAuraSR": "DownLoad And Load AuraSR",
+    "LoadAuraSR": "Load AuraSR",
     "RunAuraSR": "Run AuraSR"
 }
